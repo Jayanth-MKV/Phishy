@@ -1,1 +1,110 @@
+# Ignore Python virtual environments
+venv/
+env/
+*.pyc
 .vercel
+
+# Ignore generated files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore local development settings
+settings_local.py
+
+# Ignore database files
+db.sqlite3
+db.sqlite3-journal
+
+# Ignore log files
+*.log
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+
+# Ignore compiled code
+*.class
+*.jar
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore private key files
+*.key
+
+# Ignore compiled files for LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.pdf
+
+# Ignore cache and compiled files for SASS
+.sass-cache/
+
+# Ignore cache and compiled files for Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+
+# Ignore cache and compiled files for Gatsby
+.cache/
+public/
+
+# Ignore virtual environment files for pipenv
+/.venv
+.venv
+
+# Ignore compiled files for Go
+*.exe
+*.dll
+*.so
+
+# Ignore compiled files for Java
+*.class
+
+# Ignore compiled files for Rust
+/target/
+Cargo.lock
+Cargo.toml.orig
+
+# Ignore compiled files for Swift
+*.swiftpm
+.build/
+
+# Ignore compiled files for PHP
+*.phar
+*.zip
+composer.phar
+/vendor/
+
+# Ignore compiled files for Ruby
+*.gem
+*.rbc
+/vendor/bundle
+/vendor/cache
+/vendor/gems
+/.bundle
+.bundler
+.ruby-version
+
+# Ignore compiled files for TypeScript
+*.tsbuildinfo
+
+# Ignore cache and compiled files for Yarn
+yarn-error.log
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+yarn.lock

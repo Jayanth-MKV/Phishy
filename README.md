@@ -89,7 +89,11 @@ The table above shows the performance metrics of various machine learning models
 
 Feature importance for Phishing URL Detection
 <br><br>
+<p style="background-color:white">
+
 ![image](https://user-images.githubusercontent.com/79131292/144603941-19044aae-7d7b-4e9a-88a8-6adfd8626f77.png)
+
+</p>
 
 
 

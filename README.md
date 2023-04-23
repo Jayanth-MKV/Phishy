@@ -36,8 +36,6 @@ To run the project, you can follow these steps:
 │   ├── train_model.py
 ├── pickle
 │   ├── model.pkl
-├── joblib
-│   ├── gbc_model.joblib
 ├── Phishing URL Detection.ipynb
 ├── README.md
 ├── app.py

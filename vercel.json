@@ -1,15 +1,31 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "*.py",
-            "use": "@vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "app.py"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "db/load_data.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "db/save_data.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "db/train_model.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/pickle/(.*)",
+      "dest": "pickle/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ]
 }

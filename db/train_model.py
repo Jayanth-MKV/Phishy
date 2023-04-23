@@ -1,5 +1,4 @@
-import numpy as np
-import pandas as pd
+from pandas import read_sql_query as rsq
 from sklearn.ensemble import GradientBoostingClassifier
 import sqlite3
 import pickle
@@ -11,7 +10,7 @@ csv_path = 'phishing.csv'
 def train_model():
     # Load the data from the database
     conn = sqlite3.connect(db_path)
-    df = pd.read_sql_query("SELECT * FROM phishing", conn)
+    df = rsq("SELECT * FROM phishing", conn)
     conn.close()
 
     # Save the DataFrame to a CSV file

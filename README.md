@@ -6,7 +6,7 @@
   * [Introduction](#introduction)
   * [Installation](#installation)
   * [Directory Tree](#directory-tree)
-  * [Result](#result)
+  * [Model Comparison](#model-comparison)
   * [Conclusion](#conclusion)
 
 
@@ -71,7 +71,7 @@ To run the project, you can follow these steps:
 [<img target="_blank" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScq-xocLctL07Jy0tpR_p9w0Q42_rK1aAkNfW6sm3ucjFKWML39aaJPgdhadyCnEiK7vw&usqp=CAU" width=200>](https://flask.palletsprojects.com/en/2.0.x/) 
 
 
-# Model Comparison
+## Model Comparison
 
 | ML Model                        | Accuracy | F1 Score | Recall | Precision |
 |--------------------------------|----------|----------|--------|-----------|

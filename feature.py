@@ -1,14 +1,14 @@
 import ipaddress
 import re
-import urllib.request
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
-import socket
+from socket import gethostbyname
 import requests
 from googlesearch import search
-import whois
+from whois import whois
 from datetime import date
 from urllib.parse import urlparse
-import concurrent.futures
+from concurrent.futures import ThreadPoolExecutor
 
 class FeatureExtraction:
     features = []
@@ -21,7 +21,7 @@ class FeatureExtraction:
         self.response = ""
         self.soup = ""
 
-        with concurrent.futures.ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor() as executor:
             future_response = executor.submit(requests.get, url)
             try:
                 print(future_response.result())
@@ -44,7 +44,7 @@ class FeatureExtraction:
             pass
 
         try:
-            self.whois_response = whois.whois(self.domain)
+            self.whois_response = whois(self.domain)
         except:
             pass
 
@@ -430,7 +430,7 @@ class FeatureExtraction:
     # 26. WebsiteTraffic   
     def WebsiteTraffic(self):
         try:
-            rank = BeautifulSoup(urllib.request.urlopen("http://data.alexa.com/data?cli=10&dat=s&url=" + self.url).read(), "xml").find("REACH")['RANK']
+            rank = BeautifulSoup(urlopen("http://data.alexa.com/data?cli=10&dat=s&url=" + self.url).read(), "xml").find("REACH")['RANK']
             if (int(rank) < 100000):
                 return 1
             return 0
@@ -479,7 +479,7 @@ class FeatureExtraction:
         try:
             url_match = re.search(
         'at\.ua|usa\.cc|baltazarpresentes\.com\.br|pe\.hu|esy\.es|hol\.es|sweddy\.com|myjino\.ru|96\.lt|ow\.ly', self.url)
-            ip_address = socket.gethostbyname(self.domain)
+            ip_address = gethostbyname(self.domain)
             ip_match = re.search('146\.112\.61\.108|213\.174\.157\.151|121\.50\.168\.88|192\.185\.217\.116|78\.46\.211\.158|181\.174\.165\.13|46\.242\.145\.103|121\.50\.168\.40|83\.125\.22\.219|46\.242\.145\.98|'
                                 '107\.151\.148\.44|107\.151\.148\.107|64\.70\.19\.203|199\.184\.144\.27|107\.151\.148\.108|107\.151\.148\.109|119\.28\.52\.61|54\.83\.43\.69|52\.69\.166\.231|216\.58\.192\.225|'
                                 '118\.184\.25\.86|67\.208\.74\.71|23\.253\.126\.58|104\.239\.157\.210|175\.126\.123\.219|141\.8\.224\.221|10\.10\.10\.10|43\.229\.108\.32|103\.232\.215\.140|69\.172\.201\.153|'

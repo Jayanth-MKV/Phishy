@@ -1,14 +1,9 @@
 #importing required libraries
-from flask import Flask, request, render_template
-import numpy as np
-import pandas as pd
-from sklearn import metrics 
-import warnings
+from flask import Flask, request
+# import warnings
 import pickle
-import joblib
-warnings.filterwarnings('ignore')
-from feature import FeatureExtraction
-from db.save_data import save_data
+# import joblib
+# warnings.filterwarnings('ignore')
 
 
 file = open("pickle/model.pkl","rb")
@@ -22,12 +17,13 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-
+        import numpy as np
+        from feature import FeatureExtraction
         url = request.form["url"]
         obj = FeatureExtraction(url)
         x = np.array(obj.getFeaturesList()).reshape(1,30) 
 
-        y_pred =gbc.predict(x)[0]
+        # y_pred =gbc.predict(x)[0]
         #1 is safe       
         #-1 is unsafe
         # y_pro_phishing = gbc.predict_proba(x)[0,0]
@@ -43,6 +39,7 @@ def index():
 
 @app.route("/add_data", methods=["POST"])
 def add_data():
+    from db.save_data import save_data
     url = request.form["url"]
     label = request.form["label"]
     print(url,label)

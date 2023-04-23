@@ -33,7 +33,7 @@ def index():
             "prob_not_phishy":round(y_pro_non_phishing,4)
         })
     return ({
-        "url":""
+        "url":"Hello Folks :)))"
     })
 
 
